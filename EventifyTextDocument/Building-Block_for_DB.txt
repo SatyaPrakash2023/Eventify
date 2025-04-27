@@ -1,0 +1,13 @@
+  Eventify--Normal user and Admin user--Signup data(Full data Table) 
+                                      --Password(Table)(Recent password will be stored here ,Username)
+                                      --Forgot password Table(email Otp will be stored here,username)
+                                      --Security(In thia table security question and answer will be stored along with username)
+                                      --Profile Picture(It will store users profile picture)
+    Eventify                          --Event(Event details will be stored in this table)
+	Eventify                          --EventCategoriesTypes of event will be stored here along with event id)
+	Eventify                          --EventRegistrations(Which user register which event)
+	Eventify                          --Tickets(ticket vip or general ticket)
+	Eventify                          --Payment
+	Eventify                          --Notification
+	Eventify                          --Comments/Feedback
+	Eventify                          --Files/Media
