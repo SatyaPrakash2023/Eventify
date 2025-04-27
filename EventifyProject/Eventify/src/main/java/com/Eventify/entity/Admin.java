@@ -17,34 +17,45 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "UserSignup")
-public class User {
+@Table(name = "AdminSignup")
+public class Admin {
     @Id
     @Column(name = "UserId")
     private String userId;
+
     @Column(name = "FirstName")
     private String firstName;
+
     @Column(name = "LastName")
     private String lastName;
+
     @Column(name = "MobileNo")
     private String mobileNo;
-    @Column(name = "Email", nullable = false)
+
+    @Column(name = "Email", nullable = false, length = 400)
     private String email;
+
     @Column(name = "UserName", unique = true)
     private String userName;
+
     @Column(name = "DateOfBirth")
     private LocalDate dateOfBirth;
+
     @Column(name = "Gender")
-    private Gender gender; // We can use Enum class later if needed
+    private Gender gender; // Enum: Male, Female, Other
+
     @Column(name = "Status")
-    private Status status; // We can use Enum class later if needed
+    private Status status; // Enum: Active, InActive
+
     @Column(name = "Created_at")
     private LocalDateTime createdAt;
+
     @Column(name = "Updated_at")
     private LocalDateTime updatedAt;
+
     @Column(name = "Password_fst")
     private String passwordFst;
-    @Column(name = "Profile_picture")
-    private String profilePicture;
 
+    @Column(name = "Profile_picture", length = 455)
+    private String profilePicture;
 }
