@@ -2,12 +2,12 @@ Drop database if exists Eventify;
 create Database  Eventify;
 Use Eventify;
 Create table UserSignup(UserId varchar(100) primary key,FirstName varchar(100),
-LastName varchar(100),MobileNo varchar(100),Email varchar(100),UserName varchar(100) unique,DateOfBirth date,Gender enum('Male','Female','Other'),Status enum('Active','InActive'),
+LastName varchar(100),MobileNo varchar(100),Email varchar(400) Not null,UserName varchar(100) unique,DateOfBirth date,Gender enum('Male','Female','Other'),Status enum('Active','InActive'),
 Created_at datetime,Updated_at datetime,Password_fst varchar(100),Profile_picture VARCHAR(455));
 
 
 Create table AdminSignup(UserId varchar(100) primary key,FirstName varchar(100),
-LastName varchar(100),MobileNo varchar(100),Email varchar(100),UserName varchar(100) unique,DateOfBirth date,Gender enum('Male','Female','Other'),Status enum('Active','InActive'),
+LastName varchar(100),MobileNo varchar(100),Email varchar(400) Not null,UserName varchar(100) unique,DateOfBirth date,Gender enum('Male','Female','Other'),Status enum('Active','InActive'),
 Created_at datetime,Updated_at datetime,Password_fst varchar(100),Profile_picture VARCHAR(455));
 
 Create table Password_User(Id int auto_increment primary key,UserName varchar(100) unique Not Null,PassWord_Val varchar(100),Created_at datetime,expires_at datetime,Otp varchar(100));
