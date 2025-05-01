@@ -1,6 +1,6 @@
 package com.Eventify.entity;
 
-import java.time.LocalDate;
+import java.time.LocalDate;  
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
@@ -46,5 +46,6 @@ public class User {
     private String passwordFst;
     @Column(name = "Profile_picture")
     private String profilePicture;
+	
 
 }
