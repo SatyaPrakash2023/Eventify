@@ -1,9 +1,14 @@
 package com.Eventify.service;
 
+import java.util.List;
+
 import com.Eventify.dto.UserDto;
 
 public interface UserService {
-	UserDto createUser(UserDto userdto);
-	UserDto getUserDataById(String userId);
+	public UserDto createUser(UserDto userdto);
+	public UserDto getUserDataById(String userId);
+	public List<UserDto> getAllUser();
+	public UserDto updateUserDataById(String userId,UserDto updatedUser);
+	public String deleteUserById(String userId);
 	
 }

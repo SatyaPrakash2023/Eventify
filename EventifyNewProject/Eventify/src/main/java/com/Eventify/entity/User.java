@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -34,8 +36,10 @@ public class User {
     private String userName;
     @Column(name = "DateOfBirth")
     private LocalDate dateOfBirth;
+    @Enumerated(EnumType.STRING)
     @Column(name = "Gender")
     private Gender gender; // We can use Enum class later if needed
+    @Enumerated(EnumType.STRING)
     @Column(name = "Status")
     private Status status; // We can use Enum class later if needed
     @Column(name = "Created_at")
