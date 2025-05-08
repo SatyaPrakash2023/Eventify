@@ -5,6 +5,8 @@ import './App.css'
 import HeaderComponent from './Components/HeaderComponent'
 import UserListComponent from './Components/UserListComponent'
 import FooterComponent from './Components/FooterComponent'
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Signup from './Components/Signup'
 
 
 function App() {
@@ -12,9 +14,13 @@ function App() {
 
   return (
     <>
-      <HeaderComponent/>
-      <UserListComponent />
-      <FooterComponent/>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Signup />} />
+          <Route path='/Home' element={<><HeaderComponent /> <FooterComponent /></>}></Route>
+          <Route path='/UserList' element={<UserListComponent />}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
