@@ -2,7 +2,7 @@ body{
     color: #000;
     overflow-x: hidden;
     height: 100%;
-    /* background-image: url("https://i.imgur.com/GMmCQHC.png"); */
+    background-image: url("../EventifyImages/BackgroundImage.png");
     background-color: #000;
     background-repeat: no-repeat;background-size: 100% 100%
 }
@@ -13,7 +13,7 @@ body{
     margin: 20px auto;   /* Vertically spaced, centered horizontally */
     border: none !important;
     box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2);
-    background-color: #fff;  /* Optional: adds contrast */
+    background-color: #292424;  /* Optional: adds contrast */
     border-radius: 10px;     /* Optional: for rounded corners */
 }
 .blue-text{
@@ -27,7 +27,7 @@ input, textarea, button{
     border-radius: 5px !important;
     margin: 5px 0px;
     box-sizing: border-box;
-    border: 1px solid #ccc;
+    border: 1px solid #161414;
     font-size: 18px !important;
     font-weight: 300
 }

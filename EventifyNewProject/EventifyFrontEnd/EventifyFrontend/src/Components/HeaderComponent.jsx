@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import logo from '../EventifyImages/Logo.png';
 
 const HeaderComponent = () => {
     const [cities, setCities] = useState([]);
@@ -21,7 +22,10 @@ const HeaderComponent = () => {
       <header>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
-                <a className="navbar-brand" href="https://github.com/SatyaPrakash2023/Eventify">Eventify</a>
+                <a className="navbar-brand" href="http://localhost:3000" style={{ color: '#fff', marginLeft: '0.1cm' }}>
+                        <img src={logo} alt="" width="30" height="24" className="d-inline-block align-text-top"/>
+                        Eventify
+                </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
                 </button>

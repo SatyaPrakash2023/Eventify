@@ -2,6 +2,8 @@ import React, { useRef, useState } from 'react';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import '../StyleFile/style.css';
+import logo from '../EventifyImages/Logo.png';
+
 
 const Signup = () => {
   const fnameRef = useRef();
@@ -64,6 +66,15 @@ const Signup = () => {
   };
 
   return (
+    <>
+     <nav className="navbar navbar-light bg-dark">
+      <div className="container-fluid">
+       <a className="navbar-brand" href="http://localhost:3000" style={{ color: '#fff', marginLeft: '0.1cm' }}>
+        <img src={logo} alt="" width="30" height="24" className="d-inline-block align-text-top"/>
+        Eventify
+      </a>
+      </div>
+    </nav>
     <div className="container-fluid px-1 py-5 mx-auto">
       <div className="row d-flex justify-content-center">
         <div className="col-xl-12 col-lg-10 col-md-9 col-11 text-center">
@@ -149,6 +160,7 @@ const Signup = () => {
                     inputStyle={{ height: '38px' }}
                     enableSearch={true}
                     containerStyle={{ width: '100%' }}
+                    placeholder='Enter your phone number'
                   />
                   <input ref={mobileRef} type="hidden" />
                 </div>
@@ -214,21 +226,21 @@ const Signup = () => {
                   </div>
                 </div>
               </div>
-
               {/* Submit */}
               <div className="row justify-content-end">
                 <div className="form-group col-sm-12">
                   <button type="submit" className="btn btn-block btn-primary">
-                    Submit
-                  </button>
+                    Signup
+                  </button> 
                 </div>
               </div>
-
+              <a href='http://localhost:3000/Home' style={{textDecoration:none}}>Login as a guest?</a>
             </form>
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </> 
   );
 };
 
