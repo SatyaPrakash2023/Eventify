@@ -7,10 +7,10 @@ body{
     background-repeat: no-repeat;background-size: 100% 100%
 }
 .card {
-    width: 70vw;         /* 70% of the viewport width */
+    width: 80vw;         /* 70% of the viewport width */
     height: 90vh;        /* 70% of the viewport height */
-    padding: 20px 20px;
-    margin: 20px auto;   /* Vertically spaced, centered horizontally */
+    padding: 10px 10px;
+    margin: 10px auto;   /* Vertically spaced, centered horizontally */
     border: none !important;
     box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2);
     background-color: #292424;  /* Optional: adds contrast */
@@ -51,4 +51,7 @@ input:focus, textarea:focus{
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
     outline-width: 0
+}
+.btn{
+    margin-top: 15px;
 }

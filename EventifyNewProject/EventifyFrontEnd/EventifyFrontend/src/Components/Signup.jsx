@@ -3,27 +3,58 @@ import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import '../StyleFile/style.css';
 import logo from '../EventifyImages/Logo.png';
+import { cloudinaryConfig } from '../CloudinaryConfig';
+import { cretaeUser } from '../Services/UserServics';
+import { useNavigate } from 'react-router-dom';
 
 
 const Signup = () => {
+  const [userId, setUserId] = useState('');
   const fnameRef = useRef();
   const lnameRef = useRef();
   const emailRef = useRef();
   const userNameRef = useRef();
   const dobRef = useRef();
   const mobileRef = useRef();
-
+  const passwordRef = useRef();
   const [phone, setPhone] = useState('');
   const [profileImage, setProfileImage] = useState(null);
+  const [imageUrl, setImageUrl] = useState('');
+  const [createdAt,setCreatedAt] = useState(new Date().toISOString());
+  const [updatedAt,setUpdatedAt] = useState(createdAt);
+  const [Status, setStatus] = useState('Active');
+  
+
+
+  const navigate = useNavigate();
+
+  const handleImageUpload = async (file) => {
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', cloudinaryConfig.uploadPreset);
+    try {
+      const res = await fetch(`https://api.cloudinary.com/v1_1/${cloudinaryConfig.cloudName}/image/upload`, {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await res.json();
+      setImageUrl(data.secure_url);
+      console.log('Image uploaded:', data.secure_url);
+    } catch (error) {
+      console.error('Error uploading image:', error);
+    }
+  };
+
+
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setProfileImage(reader.result);
-      };
-      reader.readAsDataURL(file);
+      handleImageUpload(file);
+      setProfileImage(URL.createObjectURL(file));
+    }else {
+      setFileName('No Profile Picture');
+      setProfileImage(null);
     }
   };
 
@@ -34,7 +65,7 @@ const Signup = () => {
     const v4 = emailRef.current;
     const v5 = userNameRef.current;
     const v6 = dobRef.current;
-
+    const v7 = passwordRef.current;
     let valid = true;
 
     if (val >= 1 || val === 0) {
@@ -61,8 +92,35 @@ const Signup = () => {
       v6.style.borderColor = v6.value === '' ? 'red' : 'green';
       valid = valid && v6.value !== '';
     }
+    if (val >= 7 || val === 0) {
+      v7.style.borderColor = v7.value === '' ? 'red' : 'green';
+      valid = valid && v7.value !== '';
+    }
 
     return valid;
+  };
+  function saveUser(e) {
+    e.preventDefault();
+    
+    const user = {
+      firstName: fnameRef.current.value,
+      lastName: lnameRef.current.value,
+      phone: phone,
+      email: emailRef.current.value,
+      username: userNameRef.current.value,
+      dob: dobRef.current.value,
+      gender: document.querySelector('input[name="gender"]:checked').value,
+      Status: Status,
+      createdAt: createdAt,
+      updatedAt: updatedAt,
+      password: passwordRef.current.value,
+      profilePicture: imageUrl,      
+    }
+    console.log('User data:', user);
+    cretaeUser(user).then((response) => {
+      console.log(response.data);
+      navigate('/Login');
+    })
   };
 
   return (
@@ -78,9 +136,9 @@ const Signup = () => {
     <div className="container-fluid px-1 py-5 mx-auto">
       <div className="row d-flex justify-content-center">
         <div className="col-xl-12 col-lg-10 col-md-9 col-11 text-center">
-          <h3>Register here</h3>
+          <h3 style={{ fontWeight: 'bold', color: '#000' }}>Register here</h3>
           <div className="card">
-            <h5 className="text-center mb-4">Where Every Moment Becomes an Experience.</h5>
+            <h5 className="text-center mb-4" style={{ fontFamily: 'Georgia, serif', fontWeight: 'bold', color: '#444' }}>Where Every Moment Becomes an Experience.</h5>
             <form className="form-card">
 
               {/* Profile picture section */}
@@ -211,17 +269,31 @@ const Signup = () => {
               <div className="row justify-content-between text-left">
                 <div className="form-group col-sm-6 flex-column d-flex">
                   <label className="form-control-label px-3">
-                    Gender<span className="text-danger"> *</span>
+                  Password<span className="text-danger"> *</span>
+                  </label>
+                  <input
+                    ref={passwordRef}
+                    type="password"
+                    name="Password"
+                    placeholder="Enter your password"
+                    onBlur={() => validate(7)}
+                  />
+                </div>
+
+
+                <div className="form-group col-sm-6 flex-column d-flex">
+                  <label className="form-control-label px-3">
+                    Gender<span className="text-danger">*</span>
                   </label>
                   <div>
                     <label className="mr-3">
-                      <input type="radio" name="gender" value="male" className="mr-1" /> Male
+                      <input type="radio" name="gender" value="MALE" className="mr-1" /> Male
                     </label>
                     <label className="mr-3">
-                      <input type="radio" name="gender" value="female" className="mr-1" /> Female
+                      <input type="radio" name="gender" value="FEMALE" className="mr-1" /> Female
                     </label>
                     <label>
-                      <input type="radio" name="gender" value="other" className="mr-1" /> Other
+                      <input type="radio" name="gender" value="OTHER" className="mr-1" /> Other
                     </label>
                   </div>
                 </div>
@@ -229,7 +301,7 @@ const Signup = () => {
               {/* Submit */}
               <div className="row justify-content-end">
                 <div className="form-group col-sm-12">
-                  <button type="submit" className="btn btn-block btn-primary" href='http://localhost:3000/Login'>
+                  <button type="submit" className="btn btn-block btn-primary" onClick={saveUser} >
                     Signup
                   </button> 
                 </div>
