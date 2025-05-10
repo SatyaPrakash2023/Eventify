@@ -229,12 +229,13 @@ const Signup = () => {
               {/* Submit */}
               <div className="row justify-content-end">
                 <div className="form-group col-sm-12">
-                  <button type="submit" className="btn btn-block btn-primary">
+                  <button type="submit" className="btn btn-block btn-primary" href='http://localhost:3000/Login'>
                     Signup
                   </button> 
                 </div>
-              </div>
-              <a href='http://localhost:3000/Home' style={{textDecoration:none}}>Login as a guest?</a>
+                </div>
+              <a href='http://localhost:3000/Login'>Already have an account ?</a>&nbsp;&nbsp;
+              <a href='http://localhost:3000/Home' style={{textDecorationLine:'none',marginLeft: '2px' }}>Login as a guest ?</a>
             </form>
           </div>
         </div>
