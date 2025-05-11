@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 
+
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -7,17 +9,28 @@
 	font-family: Raleway, sans-serif;
 }
 
-body {
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	/* overflow: hidden; Disable scrollbars */
+  }
+
+/* body {
 	background: linear-gradient(90deg, #C7C5F4, #776BCC);
     
-}
+} */
 
 .container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 100vh;
-    overflow: hidden;
+	height: 100vh; /* Make the container take the full screen height */
+	width: 100vw; /* Make the container take the full screen width */
+	margin: 0;
+	padding: 0;
+	overflow: hidden; /* Ensure no extra scrollbars */
 }
 
 .screen {		
@@ -179,4 +192,23 @@ body {
 
 .social-login__icon:hover {
 	transform: scale(1.5);	
+}
+
+.popup-message {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	background-color: #333;
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 5px;
+	z-index: 1000;
+	animation: fadeInOut 2s ease-in-out;
+}
+  
+@keyframes fadeInOut {
+	0% { opacity: 0; transform: translateY(-20px); }
+	20% { opacity: 1; transform: translateY(0); }
+	80% { opacity: 1; transform: translateY(0); }
+	100% { opacity: 0; transform: translateY(-20px); }
 }

@@ -1,6 +1,7 @@
 package com.Eventify.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.http.HttpStatus; 
 import org.springframework.http.ResponseEntity;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Eventify.dto.UserDto;
@@ -61,6 +63,18 @@ public class UserController {
 	public ResponseEntity<String> deletedUserById(@PathVariable("id") String userId){
 		String str=userService.deleteUserById(userId);
 		return ResponseEntity.ok("Deleted Successfully");
+	}
+	
+	@PostMapping("/Login")
+	public ResponseEntity<String> Login(@RequestBody Map<String, String> loginData){
+		String userName = loginData.get("userName");
+	    String passwordFst = loginData.get("passwordFst");
+		String result=userService.Login(userName, passwordFst);
+		 if (result.equals("Login Sucessfully")) {
+		        return ResponseEntity.ok(result);
+		  } else {
+		        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(result);
+		 }
 	}
 	
 

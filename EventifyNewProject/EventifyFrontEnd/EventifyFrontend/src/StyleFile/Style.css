@@ -1,11 +1,11 @@
-body{
+/* body{
     color: #000;
     overflow-x: hidden;
     height: 100%;
     background-image: url("../EventifyImages/BackgroundImage.png");
     background-color: #000;
     background-repeat: no-repeat;background-size: 100% 100%
-}
+} */
 .card {
     width: 80vw;         /* 70% of the viewport width */
     height: 90vh;        /* 70% of the viewport height */

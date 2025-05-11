@@ -10,5 +10,6 @@ public interface UserService {
 	public List<UserDto> getAllUser();
 	public UserDto updateUserDataById(String userId,UserDto updatedUser);
 	public String deleteUserById(String userId);
+	public String Login(String userName,String passwordFst);
 	
 }

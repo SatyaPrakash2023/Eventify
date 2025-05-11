@@ -22,8 +22,10 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public UserDto createUser(UserDto userdto) {
 		// TODO Auto-generated method stub
+		System.out.println("Creating user: " + userdto);
 		User user=UserMapper.mappedToUserEntity(userdto);
 		User savedUser=userrepo.save(user);
+		System.out.println("Saved user: " + savedUser);
 		UserDto userDto=UserMapper.mappedToUserDto(savedUser);
 		return userDto;
 	}
@@ -75,6 +77,29 @@ public class UserServiceImpl implements UserService {
 		User user=userrepo.findById(userId).orElseThrow(() -> new ResourceNotFoundException("Given id is not present in database please verify your Id"+userId));
 		userrepo.delete(user);
 		return "Deleted sucessfully";
+	}
+
+	@Override
+	public String Login(String userName, String passwordFst) {
+		// TODO Auto-generated method stub
+		User user=userrepo.findByUserName(userName);
+		if(user!=null) {
+			
+			String enteredPassword = passwordFst.trim();
+	        String storedPassword = user.getPasswordFst().trim();
+
+	     // Logging for debugging
+	        System.out.println("User found: " + user);
+	        System.out.println("Entered password: [" + enteredPassword + "]");
+	        System.out.println("Stored password: [" + storedPassword + "]");
+
+			if(enteredPassword.equals(storedPassword)) {
+				return "Login Sucessfully";
+			}else {
+				return "Invalid user name and password";
+			}
+		}
+		return "Invalid user name and password";
 	}
 
 }

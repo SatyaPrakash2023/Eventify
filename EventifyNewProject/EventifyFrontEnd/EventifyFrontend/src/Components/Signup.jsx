@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import '../StyleFile/style.css';
@@ -6,10 +6,25 @@ import logo from '../EventifyImages/Logo.png';
 import { cloudinaryConfig } from '../CloudinaryConfig';
 import { cretaeUser } from '../Services/UserServics';
 import { useNavigate } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
+import bgImage from '../EventifyImages/BackgroundImage.png';
+
+
+
+const generateUserId = () => {
+
+  // Generate a random UUID
+  const uuid = uuidv4().replace(/-/g, '');
+  
+  // Extract the first 5 characters from the UUID and create the user ID
+  const userID = "Usr" + uuid.substring(0, 5); // Ensures it's 8 characters including "Usr"
+  
+  return userID;
+  // return `Usr-${uuidv4()}`; // Generates a unique ID with "Usr-" prefix
+};
 
 
 const Signup = () => {
-  const [userId, setUserId] = useState('');
   const fnameRef = useRef();
   const lnameRef = useRef();
   const emailRef = useRef();
@@ -43,9 +58,7 @@ const Signup = () => {
     } catch (error) {
       console.error('Error uploading image:', error);
     }
-  };
-
-
+  }; 
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -101,19 +114,22 @@ const Signup = () => {
   };
   function saveUser(e) {
     e.preventDefault();
-    
+    const newUserId = generateUserId();
+
+
     const user = {
+      userId:newUserId,
       firstName: fnameRef.current.value,
       lastName: lnameRef.current.value,
-      phone: phone,
+      mobileNo: phone,
       email: emailRef.current.value,
-      username: userNameRef.current.value,
+      userName: userNameRef.current.value,
       dob: dobRef.current.value,
       gender: document.querySelector('input[name="gender"]:checked').value,
-      Status: Status,
+      status: Status,
       createdAt: createdAt,
       updatedAt: updatedAt,
-      password: passwordRef.current.value,
+      passwordFst: passwordRef.current.value,
       profilePicture: imageUrl,      
     }
     console.log('User data:', user);
@@ -133,7 +149,15 @@ const Signup = () => {
       </a>
       </div>
     </nav>
-    <div className="container-fluid px-1 py-5 mx-auto">
+    <div className="container-fluid px-1 py-5 mx-auto" style={{
+        color: '#000',
+        overflowX: 'hidden',
+        height: '100%',
+        backgroundImage: `url(${bgImage})`,
+        backgroundColor: '#000',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: '100% 100%',
+      }}>
       <div className="row d-flex justify-content-center">
         <div className="col-xl-12 col-lg-10 col-md-9 col-11 text-center">
           <h3 style={{ fontWeight: 'bold', color: '#000' }}>Register here</h3>
