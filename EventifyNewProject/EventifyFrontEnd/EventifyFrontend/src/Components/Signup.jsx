@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState} from 'react';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import '../StyleFile/style.css';
@@ -35,10 +35,13 @@ const Signup = () => {
   const [phone, setPhone] = useState('');
   const [profileImage, setProfileImage] = useState(null);
   const [imageUrl, setImageUrl] = useState('');
-  const [createdAt,setCreatedAt] = useState(new Date().toISOString());
-  const [updatedAt,setUpdatedAt] = useState(createdAt);
-  const [Status, setStatus] = useState('Active');
+  const [createdAt,setCreatedAt] = useState('');
+  const [updatedAt,setUpdatedAt] = useState('');
+  const [Status, setStatus] = useState('');
   
+  setCreatedAt(new Date().toISOString());
+  setUpdatedAt(createdAt);
+  setStatus('Active');
 
 
   const navigate = useNavigate();
@@ -66,7 +69,7 @@ const Signup = () => {
       handleImageUpload(file);
       setProfileImage(URL.createObjectURL(file));
     }else {
-      setFileName('No Profile Picture');
+      console.log('No Profile Picture');
       setProfileImage(null);
     }
   };

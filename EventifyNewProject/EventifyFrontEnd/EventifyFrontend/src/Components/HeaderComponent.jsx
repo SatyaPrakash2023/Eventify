@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState} from 'react'
 import logo from '../EventifyImages/Logo.png';
+// import { useNavigate } from 'react-router-dom';
 
 const HeaderComponent = () => {
     const [cities, setCities] = useState([]);
     const [selectedCity, setSelectedCity] = useState("Bengaluru");
-
+    // const navigate = useNavigate();
     useEffect(() => {
         // Fetch cities when component mounts
         fetch("https://countriesnow.space/api/v0.1/countries/cities", {
@@ -17,14 +18,22 @@ const HeaderComponent = () => {
         .catch(err => console.error("Failed to fetch cities", err));
     }, []);
 
+
+    // Handle Logout Function
+    const handleLogout = () => {
+     window.location.replace('/login');
+
+
+    };
+
   return (
     <div>
       <header>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
                 <a className="navbar-brand" href="http://localhost:3000" style={{ color: '#fff', marginLeft: '0.1cm' }}>
-                        <img src={logo} alt="" width="30" height="24" className="d-inline-block align-text-top"/>
-                        Eventify
+                    <img src={logo} alt="" width="30" height="24" className="d-inline-block align-text-top"/>
+                    Eventify
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
@@ -65,7 +74,7 @@ const HeaderComponent = () => {
                         </ul>
                     </li>
                     <li className="nav-item">
-                    <a className="nav-link" href="#">Logout</a>
+                    <a className="nav-link" onClick={handleLogout}>Logout</a>
                     </li>
                 </ul>
                 </div>

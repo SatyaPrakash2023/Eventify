@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../StyleFile/Login.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faFacebook,faInstagram,faXTwitter } from '@fortawesome/free-brands-svg-icons'
+import {faFacebook,faInstagram,faXTwitter } from '@fortawesome/free-brands-svg-icons'
 import logo from '../EventifyImages/Logo.png';
 import { useNavigate } from 'react-router-dom';
 import { LoginUser } from '../Services/UserServics';
