@@ -1,0 +1,163 @@
+.login-container {
+  height: 100vh;
+  max-width: 100vw;
+}
+ 
+.left-panel {
+  background: url('../../images/images.jpg');
+  background-size: cover;
+  filter: brightness(0.7) blur(3px);
+}
+ 
+.login-form-wrapper {
+  max-width: 400px;
+  width: 100%;
+}
+ 
+.login-button {
+  background-color: #5c3e98 !important;
+  border-color: #5c3e98 !important;
+  border-radius: 8px !important;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+ 
+.login-button:hover {
+  background-color: #4a327a !important;
+  border-color: #4a327a !important;
+}
+ 
+.divider {
+  text-align: center;
+  position: relative;
+}
+ 
+.divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #dee2e6;
+  z-index: 0;
+}
+ 
+.or-text {
+  background-color: #fff;
+  padding: 0 10px;
+  position: relative;
+  z-index: 1;
+  color: #6c757d;
+}
+ 
+.forgot-password-link, .signup-link {
+  color: #5c3e98;
+  text-decoration: none;
+}
+ 
+.custom-header {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  padding: 15px;
+}
+ 
+.custom-link {
+  position: relative;
+  font-weight: 500;
+  color: #333 !important;
+  margin: 0 10px;
+}
+ 
+.custom-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: #5c3e98;
+  transition: width 0.3s ease;
+  -webkit-transition: width 0.3s ease;
+}
+ 
+.custom-link:hover::after {
+  width: 100%;
+  left: 0;
+  background: #5c3e98;
+}
+ 
+.custom-link:hover {
+  color: #5c3e98 !important;
+}
+
+
+
+
+
+import React, { useState } from 'react';
+import { Form, Button, Container, Row, Col } from 'react-bootstrap';
+import '../../../css/provider/custom.css';
+import { FaGoogle, FaGithub } from 'react-icons/fa';
+import Header from './Header'
+ 
+function LoginPage() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+ 
+  const handleLogin = (e) => {
+    e.preventDefault();
+    console.log('Login attempt with:', { email, password });
+  };
+ 
+  return (
+    <>
+     <Header></Header>
+     <Container fluid className="login-container">
+      <Row className="h-100">
+        <Col md={6} className="left-panel d-flex flex-column justify-content-end p-5 text-white">
+        </Col>
+ 
+        <Col md={6} className="right-panel d-flex align-items-center justify-content-center p-5 bg-white">
+          <div className="login-form-wrapper">
+            <h2 className="mb-4">Sign In</h2>
+            <Form onSubmit={handleLogin}>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Control
+                  type="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </Form.Group>
+ 
+              <Form.Group className="mb-2" controlId="formBasicPassword">
+                <Form.Control
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </Form.Group>
+              <div className="text-end mb-4">
+                <a href="#forgot" className="forgot-password-link">Forgot Password?</a>
+              </div>
+ 
+              <Button type="submit" className="w-100 login-button">
+                Login
+              </Button>
+            </Form>
+ 
+            <p className="mt-4 text-center">
+              Don't have an account? <a href="#signup" className="signup-link">Sign Up.</a>
+            </p>
+          </div>
+        </Col>
+      </Row>
+    </Container>
+    </>
+  );
+}
+ 
+export default LoginPage;
+
