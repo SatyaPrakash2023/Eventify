@@ -1,0 +1,240 @@
+2025
+___________________________________________________________________________________________________________________________________________
+==============
+ April
+==============
+
+(i)Worked on defect ESPRD01329283 (Fund Code: Notes sorting and page navigation issue with << and >>)
+          ->Analyzed the defect why fund code criteria were not sorting correctly.
+          ->Modified the code for the issue
+          ->Verified all the scenarios and checked whether it is working properly or not.
+          ->Prepared all required documents for the defect (UTR, PMD, Dev Checklist, test case scenarios).
+
+(ii)Worked on defect ESPRD01330599 (Other Payer – View TPL Info – TPL amounts navigation issue)
+          ->Analyzed the defect issue with TPL amount pages not moving correctly.
+          ->Modified code to fix the navigation logic for switching between TPL amount pages.
+          ->Tested all TPL amount page navigation scenarios to ensure smooth movement.
+          ->Prepared UTR, Test case scenarios, and Dev Checklist documents.
+
+(iii)Worked on defect ESPRD01329301 (Selection and Print functionality issues in Fiscal Pend and TPL Matrix Notes History table)
+          ->Analyzed the defect and found issues with selecting notes and printing the Notes History table.
+          ->Modified code to fix selection logic and corrected print functionality.
+          ->Tested note selection and print output to confirm both work properly.
+          ->Prepared UTR, scenarios.
+
+(iv)Performed testing for Fix Pack in ENV52 and ENV58.
+(v)Completed PMD tasks for NH, AK, and ND.
+(vi)Performed smoke testing in environments.
+__________________________________________________________________________________________________________________________________________
+==============
+ May
+==============
+
+(i)Worked on defect ESPRD01326490 (Issues with sorting notes in In-Service Authorization Notes section – 14.0 Release)
+           ->Analyzed why the notes were not sorting correctly in both orders.
+           ->Modified code to fix the sorting logic for ascending and descending order.
+           ->Tested multiple note entries to ensure sorting works properly.
+           ->Prepared UTR, scenarios, and Dev Checklist.
+
+(ii)Worked on defect ESPRD01331113 (IPC issue – Dental to Medical Dental batch inquiry data disappearing – 14.1 Release)
+           ->Analyzed why Dental to Medical data was disappearing due to an IPC issue.
+           ->Modified code to fix the IPC logic to ensure batch inquiry data remains visible.
+           ->Tested Dental to Medical inquiry flow to confirm data stays consistent.
+           ->Prepared UTR, scenarios, and Dev Checklist.
+
+(iii)Completed Blaze-related installation and explored Blaze and Rules server.
+(iv)Completed PMD tasks for NH, AK, and ND.
+(v)Performed smoke testing in environments.
+__________________________________________________________________________________________________________________________________________
+==============
+ June
+==============
+
+(i)Worked on defect ESPRD01331888(Global pagination issues likely caused by TSU-14.2 Release)
+           ->Analyzed the cause of global pagination not working across Claims and SA.
+           ->Fixed the pagination logic and updated related functions.
+           ->Tested all pagination scenarios across Claims and SA.
+           ->Prepared UTR, scenarios.
+
+(ii)Worked on defect ESPRD01329286 (Fiscal Pend Add Page pagination, reset not working, double error messages)
+           ->Analyzed the issues in pagination, reset button behavior, and duplicate error message issue in Fiscal Pend.
+           ->Modified code to fix pagination logic, corrected reset functionality, and duplicate error messages in Fiscal Pend.
+           ->Tested all scenarios to ensure pagination, reset, and messages work correctly.
+           ->Prepared UTR, scenarios, and Dev Checklist.
+
+(iii)Identified and documented 17 tables with global pagination issues in the Claims module.
+(iv)Completed PMD tasks for NH, AK, and ND.
+(v)Performed smoke testing in environments.
+___________________________________________________________________________________________________________________________________________
+==============
+ July
+==============
+
+(i)Worked on CR 17784 for resolving issue related to defect ESPRD01326828 (SA missing in Production EVV SA File)
+           ->Analyzed the CR and checked the root cause and identified why the SA was missing in the EVV SA file.
+           ->Implemented required changes to ensure the SA is correctly included in the EVV file.
+           ->Tested the full flow and checked the impact on functionality to confirm the SA appears correctly.
+           ->Prepared UTR, scenarios for this CR.
+
+(ii)Worked on defect ESPRD01330617 (Medical SA created incorrectly on inpatient submission in external login – 14.3 Release)
+           ->Analyzed the defect why a Medical SA was getting created incorrectly during inpatient submission.
+           ->Prepared all the test case scenarios and tested all inpatient submission scenarios.
+           ->Prepared all the required documents.
+
+(iii)Performed analysis on production TCN 23074300070000920 (Exception ‑4762 preventing claim pricing).
+(iv)Completed PMD tasks for NH, AK, and ND.
+(v)Performed smoke testing in environments.
+
+____________________________________________________________________________________________________________________________________________
+==============
+ August
+==============
+
+(i)Worked on defect ESPRD01328360 (Fund Code Details opening issue – 14.4 Release)
+          ->Analyzed the defect why the Fund Code Details screen was not opening properly on first and repeated clicks.
+          ->Fixed the logic based on browser compatibility to ensure the Fund Code Details opened correctly every time it was clicked.
+          ->Tested all scenarios to ensure the panel opens and refreshes as expected.
+          ->Prepared all necessary documents such as UTR, scenarios, and Dev Checklist.
+
+(ii)Worked on defect ESPRD01329284 (Fund Code sorting not working in Assignment Criteria table – 14.4 Release)
+          ->Analyzed the defect why the Fund Code sorting was not working in the Assignment Criteria table.
+          ->Fixed the sorting logic to ensure proper ascending and descending order.
+          ->Tested all sorting scenarios to confirm the values sort correctly.
+          ->Prepared all necessary documents such as UTR, scenarios, and Dev Checklist.
+
+(iii)Performed analysis on 9379 edit (edit -enterpriseSystemFault' was raised by activity 'InvokeFASAUnitsAndAmountsEdits' for TCN  18073300070001110).
+(iv)Completed PMD tasks for NH, AK, and ND.
+(v)Performed smoke testing in environments.
+
+_____________________________________________________________________________________________________________________________________________
+==============
+ September
+==============
+
+(i)Worked on defect ESPRD01334274 (Unable to view beyond first 5 rows in Claim Member for additional data – 14.5 Release)
+          ->Analyzed the defect why only the first 5 rows were displaying in the Claim Member section.
+          ->Fixed the pagination logic to load and show all rows correctly.
+          ->Tested all scenarios thoroughly.
+          ->Prepared UTR, scenarios, and Dev Checklist.
+
+(ii)Performed denial analysis for TCN 25104709500000060 provided by SME.
+(iii)Worked on Blaze POC to minimize rule server calls for encounter claims.
+(iv)Completed PMD tasks for NH, AK, and ND.
+(v)Performed smoke testing in environments.
+_____________________________________________________________________________________________________________________________________________
+==============
+ October
+==============
+
+(i)Worked on SA-SH-Housing CR 18342.
+          ->Analyzed CR 18342.
+          ->Implemented the rate field and line label diagnosis pointer.
+          ->Prepared scenario documents. 
+  
+(ii)Worked on defect ESPRD01334593(Unable to submit Professional claim from Professional template, getting an error message) and provided a workaround to SME.
+           ->Analyzed the cause of the error preventing Professional claim submission from the template.
+           ->Modified the code to fix the issue.
+           ->Tested the Professional claim submission flow to ensure it works without errors.
+           ->Prepared all necessary documents such as UTR, scenarios, and Dev Checklist.
+
+(iii)Performed denial analysis for TCN 23052300070001190 provided by SME.
+(iv)Validated and checked the impact of the new SA type on claims.
+(v)Created 25 Institutional claims for ARS/TPL module for rate-setting testing .
+(vi)Completed PMD tasks for NH, AK, and ND.
+(vii)Performed smoke testing in environments.
+
+______________________________________________________________________________________________________________________________________________
+==============
+ November
+==============
+
+(i)Worked on defect ESPRD01334273 (Unable to view beyond first 10 rows in additional billing provider ID in Claim Inquiry– 14.6 Release)
+          ->Analyzed the defect why only the first 10 rows were showing in the additional billing provider ID section.
+          ->Fixed the pagination and toggle logic to load and display all available rows.
+          ->Tested multiple scenarios to confirm rows beyond the first 10 load correctly.
+          ->Prepared UTR, scenarios, and Dev Checklist.
+
+(ii)Worked on defect ESPRD01334764 (Incorrect SA Category Code dropdown values in Service Authorization Search – 14.6 Release).
+           ->Analyzed the defect why the SA Category Code dropdown was showing incorrect values.
+           ->Modified the code to correct the mapping logic and display the correct dropdown values.
+           ->Tested the dropdown selections to ensure all values appear correctly.
+           ->Prepared UTR, scenarios, and Dev Checklist.
+
+(iii)Validated all SA edits for new SA type SH‑Housing.
+(iv)Completed PMD tasks for NH, AK, and ND.
+(v)Performed smoke testing in environments.
+_______________________________________________________________________________________________________________________________________________
+==============
+ December
+==============
+
+(i)Worked on defect ESPRD01329281(Duplicate Error/Success Messages Displayed for Single Event in Add Fund Code Assignment Criteria)
+          ->Analyzed the defect why duplicate error and success messages were appearing for a single user action.
+          ->Fixed the message‑handling logic to ensure only one correct message is displayed per event.
+          ->Tested different add/update scenarios to confirm no duplicate messages appear.
+          ->Prepared scenario documents.
+
+(ii)Analyzed the 001 Location Code edits to support correct validation logic and system behavior.
+(iii)Performed denial analysis for TCN 25314300040073620 provided by SME.
+(iv)Performed DRG testing by modifying TCNs for DRG new component.
+(v)Completed PMD tasks for NH, AK, and ND.
+(vi)Performed smoke testing in environments.
+_______________________________________________________________________________________________________________________________________________
+
+2026
+==============
+ January
+==============
+
+(i)Worked on CR_18406_ADA Project 508 Compliance Issue (14.9 Release).
+          ->Prepared all pre-testing documents for 17 screens.
+
+(ii)Worked on defect ESPRD01337456(Pagination UI issue in the TPL Information table of Claim Inquiry page for inpatient claims-14.9 Release)
+(iii)Completed 1170 Edit Analysis.
+(iv)Prepared all the required documentation for defect ESPRD01334936.
+(v)Completed PMD tasks for NH, AK, and ND.
+(vi)Performed smoke testing in environments.
+(vii)Created 10 nursing-to-be-paid claims for ARS/TPL module.
+
+______________________________________________________________________________________________________________________________________________
+
+==============
+ February
+==============
+
+(i)Continued work on CR_18406_ADA Project 508 Compliance issue (14.9 Release)
+           ->Checked all accessibility issues and identified violations that required fixes.
+           ->Applied the required 508/ADA changes and resolved 260 errors and 21 contrast errors.
+           ->Tested screens to ensure accessibility fixes worked.
+           ->Prepared all necessary documents.
+
+(ii)Worked on CR16876 (15.0 Release)
+           ->Analyzed the CR and gone through the requirement for the changes needed for the CR.
+           ->Implemented the required changes as per the CR.
+           ->Prepared 40+ scenarios and tested all related scenarios to ensure the CR changes worked correctly.
+       
+(iii)DRG testing
+(iv)Completed PMD tasks for NH, AK, and ND.
+(v)Performed smoke testing in environments.
+ 
+______________________________________________________________________________________________________________________________________________
+
+Major Contribution:-
+
+->Delivered key work across multiple releases from 13.9 to 15.0, completing several defects and CRs.
+->Worked on 16 defects and 4 change requests across multiple releases, ensuring timely analysis, development, testing, and documentation.
+->Took complete ownership of assigned development tasks including analysis, coding, testing, and documentation.
+->Contributed significantly to the CR_18406 ADA Project (Release 14.9) by resolving 260 accessibility errors and 21 contrast issues across 17 screens.
+->Completed 1170 and 4762 edit analysis and multiple SME‑requested TCN investigations to support production stability.
+->Identified and documented 17 UI tables needing pagination corrections for future defect creation.
+->Prepared all required project documents such as UTRs, scenario documents, Dev Checklists, PMD updates, and validation documents.
+->Supported the team by assisting with JUnit setup, PMD configuration when needed.
+
+
+
+Summary:-
+
+During this cycle, I worked extensively across releases 13.9 to 15.0, implementing multiple defects and CRs. I took complete ownership of development activities, including analysis, coding, testing, and documentation. I also gained hands‑on experience with the Blaze rules engine and contributed to the CR_18406 ADA 508 Compliance Project for Release 14.9, where I worked on 17 screens and successfully resolved 260 accessibility errors and 21 contrast issues. I prepared all required documents such as UTRs, PMD updates, Dev Checklists, and scenario documents for the assigned tasks. In addition, I supported team members by helping them with JUnit setup and PMD configuration. I also created multiple test claims (Institutional, Nursing to‑be‑Paid) to support ARS/TPL module validations.
+
+
+
